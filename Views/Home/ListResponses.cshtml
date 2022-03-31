@@ -1,0 +1,27 @@
+﻿@model IEnumerable<PartyInvite.Models.Response>
+@{
+    ViewData["Title"] = "See Who Is Coming";
+}
+
+<div class="text-center p-2">
+    <h2 class="text-center">Here who is coming:</h2>
+</div>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.First().Name)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Email)</th>
+            <th>@Html.DisplayNameFor(model => model.First().Phone)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var r in Model)
+        {
+            <tr>
+                <td>@r.Name</td>
+                <td>@r.Email</td>
+                <td>@r.Phone</td>
+            </tr>
+        }
+    </tbody>
+</table>
